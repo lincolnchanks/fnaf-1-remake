@@ -57,6 +57,9 @@ public class Animatronic {
             // Save the list of valid paths for this animatronic
             List<Room> validPaths = position.getValidPaths(this);
 
+            // Remove animatronic from current room
+            position.removeAnimatronic(this);
+
             // Choose a random room from the list (double check that the upper bound isn't exclusive).
             position = validPaths.get(random.nextInt(validPaths.size()));
             position.addAnimatronic(this);
