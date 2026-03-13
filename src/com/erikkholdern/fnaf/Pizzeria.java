@@ -7,6 +7,7 @@ public class Pizzeria {
     private final List<Room> rooms;
     private final List<Animatronic> animatronics;
     private static final Pizzeria instance = new Pizzeria();
+    private boolean powerOut = false;
 
     private Pizzeria(){
         // Add each room with its values
@@ -101,5 +102,13 @@ public class Pizzeria {
 
     public List<Animatronic> getAnimatronics(){
         return  animatronics;
+    }
+
+    public boolean isPowerOut(){
+        return powerOut;
+    }
+
+    public void blackout(){
+        powerOut = true;
     }
 }

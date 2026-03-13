@@ -4,9 +4,11 @@ public class Game {
     private static final Game instance = new Game();
     private final Pizzeria pizzeria = Pizzeria.getInstance();
     private int nightNumber;
+    private int hourNumber;
 
     private Game(){
         nightNumber = 1;
+        hourNumber = 0;
     }
 
     public static Game getInstance() {
