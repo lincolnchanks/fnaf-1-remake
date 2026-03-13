@@ -8,6 +8,8 @@ public class Pizzeria {
     private final List<Animatronic> animatronics;
     private static final Pizzeria instance = new Pizzeria();
     private boolean powerOut = false;
+    // If this has no usages I'll remove it in the final build.
+    private final Office office = Office.getInstance();
 
     private Pizzeria(){
         // Add each room with its values

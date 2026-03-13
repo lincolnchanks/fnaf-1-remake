@@ -1,7 +1,7 @@
 package com.erikkholdern.fnaf;
 
 public class Office {
-    public static final Office instance = new Office();
+    private static final Office instance = new Office();
 
     private int powerLevel = 100;
     private int usageLevel = 1;
@@ -16,7 +16,7 @@ public class Office {
 
     }
 
-    public Office getInstance(){
+    public static Office getInstance(){
         return instance;
     }
 
