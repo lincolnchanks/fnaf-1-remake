@@ -28,6 +28,10 @@ public class Animatronic {
         this.AILevel = AILevel;
     }
 
+    public void boostAILevel(){
+        AILevel++;
+    }
+
     public Room getPosition(){
         return position;
     }
