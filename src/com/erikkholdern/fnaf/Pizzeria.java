@@ -19,10 +19,10 @@ public class Pizzeria {
     }
 
     private List<Animatronic> initAnimatronics(List<Room> rooms){
-        Animatronic freddy = new Animatronic(0, rooms.getFirst(), "Freddy");
-        Animatronic bonnie = new Animatronic(0, rooms.getFirst(), "Bonnie");
-        Animatronic chica = new Animatronic(0, rooms.getFirst(), "Chica");
-        Animatronic foxy = new Animatronic(0, rooms.get(2), "Foxy");
+        Animatronic freddy = new Animatronic(0, rooms.getFirst(), "Freddy", 3.02);
+        Animatronic bonnie = new Animatronic(0, rooms.getFirst(), "Bonnie", 4.97);
+        Animatronic chica = new Animatronic(0, rooms.getFirst(), "Chica", 4.98);
+        Animatronic foxy = new Animatronic(0, rooms.get(2), "Foxy", 5.01);
 
         List<Animatronic> animatronics = new ArrayList<>();
         animatronics.add(freddy);

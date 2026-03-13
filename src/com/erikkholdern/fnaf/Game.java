@@ -18,24 +18,41 @@ public class Game {
     public static void main(String[] args){
         Game game = Game.getInstance();
 
-        game.pizzeria.getRooms().getFirst().showRoomCamera();
-        game.pizzeria.getRooms().get(2).showRoomCamera();
+        // Game ticks over to 2 AM
+        game.hourNumber = 2;
+        if (game.hourNumber == 2){
+            game.pizzeria.getAnimatronics().get(1).setAILevel(1);
+        }
 
         game.pizzeria.getAnimatronics().get(1).travel();
         game.pizzeria.getAnimatronics().get(1).travel();
         game.pizzeria.getAnimatronics().get(1).travel();
         game.pizzeria.getAnimatronics().get(1).travel();
+        game.pizzeria.getAnimatronics().get(1).travel();
+        game.pizzeria.getAnimatronics().get(1).travel();
+        game.pizzeria.getAnimatronics().get(1).travel();
+        game.pizzeria.getAnimatronics().get(1).travel();
 
-        game.pizzeria.getAnimatronics().getFirst().travel();
-        game.pizzeria.getAnimatronics().getFirst().travel();
-        game.pizzeria.getAnimatronics().getFirst().travel();
-        game.pizzeria.getAnimatronics().getFirst().travel();
-        game.pizzeria.getAnimatronics().getFirst().travel();
+        game.pizzeria.getAnimatronics().get(1).getPosition().showRoomCamera();
 
-        game.pizzeria.getAnimatronics().get(2).travel();
-        game.pizzeria.getAnimatronics().get(2).travel();
-        game.pizzeria.getAnimatronics().get(2).travel();
-        game.pizzeria.getAnimatronics().get(2).travel();
-        game.pizzeria.getAnimatronics().get(2).travel();
+//        game.pizzeria.getRooms().getFirst().showRoomCamera();
+//        game.pizzeria.getRooms().get(2).showRoomCamera();
+//
+//        game.pizzeria.getAnimatronics().get(1).travel();
+//        game.pizzeria.getAnimatronics().get(1).travel();
+//        game.pizzeria.getAnimatronics().get(1).travel();
+//        game.pizzeria.getAnimatronics().get(1).travel();
+//
+//        game.pizzeria.getAnimatronics().getFirst().travel();
+//        game.pizzeria.getAnimatronics().getFirst().travel();
+//        game.pizzeria.getAnimatronics().getFirst().travel();
+//        game.pizzeria.getAnimatronics().getFirst().travel();
+//        game.pizzeria.getAnimatronics().getFirst().travel();
+//
+//        game.pizzeria.getAnimatronics().get(2).travel();
+//        game.pizzeria.getAnimatronics().get(2).travel();
+//        game.pizzeria.getAnimatronics().get(2).travel();
+//        game.pizzeria.getAnimatronics().get(2).travel();
+//        game.pizzeria.getAnimatronics().get(2).travel();
     }
 }
