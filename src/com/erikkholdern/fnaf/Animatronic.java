@@ -30,8 +30,9 @@ public class Animatronic {
         return position;
     }
 
-    // This will most likely be replaced by a move() method.
     public void setPosition(Room position){
+        // This will most likely be replaced by a move() method.
+        // Unless we need it for Foxy. Then it will move to Foxy's class.
         this.position = position;
     }
 

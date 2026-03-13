@@ -1,6 +1,8 @@
 package com.erikkholdern.fnaf;
 
 public class Office {
+    public static final Office instance = new Office();
+
     private int powerLevel = 100;
     private int usageLevel = 1;
 
@@ -9,6 +11,14 @@ public class Office {
     private boolean rightDoorClosed = false;
     private boolean leftLightOn = false;
     private boolean rightLightOn = false;
+
+    private Office(){
+
+    }
+
+    public Office getInstance(){
+        return instance;
+    }
 
     public int getPowerLevel(){
         return powerLevel;
