@@ -44,82 +44,6 @@ public class Game {
         // Calling this twice does not make the program wait 5 seconds between calls,
         // which it should be doing.
         testTimer();
-//        testTimer();
-
-//        while (hourNumber < 6){
-//            // Run code
-//
-//            // Call testTimer(), which runs a movement check on each
-//            // animatronic then increments timeSeconds by 5 (it runs every second but only
-//            // updates the time every 5 seconds).
-//
-//            // Error in this line. I'm calling this multiple times per second when it's supposed
-//            // to wait 5 seconds. I need to put the while() loop inside the timer method I think.
-////            testTimer();
-//
-//            // At the end of each hour, reset time in seconds and increment the hour.
-//            if ((timeSeconds == 90 && hourNumber == 0) || (timeSeconds == 89 && hourNumber > 0)){
-//                timeSeconds = 0;
-//                hourNumber++;
-//            }
-//        }
-//
-         // Anything called after the timer method will be executed before the game ends.
-//        System.out.println("6AM: You win! (flag outside timer)");
-
-
-
-//        // 12AM
-//        for (int i = 0; i < 18; i++){
-//            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        // 1AM
-//        System.out.println("1AM");
-//        hourNumber++;
-//        bonnie.boostAILevel();
-//        for (int i = 0; i < 18; i++){
-//            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        // 2AM
-//        System.out.println("2AM");
-//        hourNumber++;
-//        bonnie.boostAILevel();
-//        chica.boostAILevel();
-//        foxy.boostAILevel();
-//        for (int i = 0; i < 18; i++){
-////            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        // 3AM
-//        System.out.println("3AM");
-//        hourNumber++;
-//        for (int i = 0; i < 18; i++){
-////            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        // 4AM
-//        System.out.println("4AM");
-//        hourNumber++;
-//        for (int i = 0; i < 18; i++){
-////            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        // 5AM
-//        System.out.println("5AM");
-//        hourNumber++;
-//        for (int i = 0; i < 18; i++){
-////            freddy.travel();
-//            bonnie.travel();
-//            chica.travel();
-//        }
-//        System.out.println("6AM: You win!");
     }
 
     public void setStartingAILevels(int nightNumber, Animatronic freddy, Animatronic bonnie,
@@ -173,7 +97,6 @@ public class Game {
 
         game.nightNumber = 3;
         game.runNight();
-//        game.testTimer();
     }
 
     public void testTimer(){
@@ -193,14 +116,13 @@ public class Game {
                     pizzeria.getAnimatronics().get(1).travel();
                     pizzeria.getAnimatronics().get(2).travel();
                     System.out.println();
-
-                    // Increment the in-game time.
-//                    timeSeconds += 5;
                 }
+                // Run when the hour ends.
                 if (count == 0){
                     hourNumber++;
                     System.out.println(hourNumber + "AM");
                     count = 89;
+                    // Run when the player reaches 6AM.
                     if (hourNumber == 6){
                         System.out.println("6AM: You Win!");
                         timer.cancel();
@@ -209,7 +131,7 @@ public class Game {
             }
         };
 
-        // The run() method is called once every second.
+        // Calls run() once per second.
         // This could be replaced by calling this once every 5 seconds, though
         // that might make it difficult to refactor the intervals for each animatronic.
         timer.scheduleAtFixedRate(task, 0, 1000); // (task, delay, period)
