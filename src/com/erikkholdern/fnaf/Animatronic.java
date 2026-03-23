@@ -56,8 +56,7 @@ public class Animatronic {
 
         // Generate a random number between 1 and 20.
         // Return true if the number is <= the AI value.
-        int moveValue = random.nextInt(1, 21);
-        return moveValue <= AILevel;
+        return random.nextInt(1, 21) <= AILevel;
     }
     public void travel(){
         // If the animatronic succeeds its movement check:

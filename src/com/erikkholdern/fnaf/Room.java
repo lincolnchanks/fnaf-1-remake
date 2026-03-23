@@ -37,14 +37,6 @@ public class Room {
         };
     }
 
-//    public void setValidPaths(Animatronic animatronic, List<Room> animatronicPaths){
-//        switch (animatronic.getName()){
-//            case "Freddy" -> validFreddyPaths = animatronicPaths;
-//            case "Bonnie" -> validBonniePaths = animatronicPaths;
-//            case "Chica" -> validChicaPaths = animatronicPaths;
-//        }
-//    }
-
     public void setValidPaths(List<Room> bonniePaths, List<Room> chicaPaths, List<Room> freddyPaths){
         validBonniePaths = bonniePaths;
         validChicaPaths = chicaPaths;

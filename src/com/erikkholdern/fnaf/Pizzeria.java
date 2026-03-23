@@ -97,6 +97,9 @@ public class Pizzeria {
         return rooms;
     }
 
+    // Create an Animatronics class that registers each animatronic.
+    // Thus, we can call the animatronics using Animatronics.FREDDY or
+    // something like that.
     public List<Animatronic> getAnimatronics(){
         return  animatronics;
     }
@@ -107,5 +110,6 @@ public class Pizzeria {
 
     public void blackout(){
         powerOut = true;
+        // Later update relevant parts of the game to disable GUI and controls
     }
 }

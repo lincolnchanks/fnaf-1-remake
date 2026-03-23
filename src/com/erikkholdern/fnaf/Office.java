@@ -43,6 +43,7 @@ public class Office {
         Pizzeria.getInstance().blackout();
 
         // Turn off all power-using tools.
+        // The GUI code will update to remove the controls to these tools, thus disabling them.
         usageLevel = 0;
         camsUp = false;
         leftDoorClosed = false;

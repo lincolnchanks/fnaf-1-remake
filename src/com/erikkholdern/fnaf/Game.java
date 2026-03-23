@@ -18,19 +18,18 @@ public class Game {
         hourNumber = 0;
     }
 
+    public static void main(String[] args){
+        Game game = Game.getInstance();
+
+        game.nightNumber = 3;
+        game.runNight();
+    }
+
     public static Game getInstance() {
         return instance;
     }
 
     public void runNight(){
-        // Sets up the night and calls the timer method. Returns true if
-        // the player survived the night. Returns false if they got
-        // jumpscared?
-
-        // Create an Animatronics class that registers each animatronic.
-        // Thus, we can call the animatronics using Animatronics.FREDDY or
-        // something like that.
-
         // Save each animatronic
         Animatronic freddy = pizzeria.getAnimatronics().getFirst();
         Animatronic bonnie = pizzeria.getAnimatronics().get(1);
@@ -40,11 +39,7 @@ public class Game {
         // Set starting AI levels according to Night Number.
         setStartingAILevels(nightNumber, freddy, bonnie, chica, foxy);
 
-        System.out.println(bonnie.getAILevel());
-        System.out.println(chica.getAILevel());
-
-        // Calling this twice does not make the program wait 5 seconds between calls,
-        // which it should be doing.
+        // Runs the night timer until 6AM.
         testTimer();
     }
 
@@ -94,15 +89,10 @@ public class Game {
         }
     }
 
-    public static void main(String[] args){
-        Game game = Game.getInstance();
-
-        game.nightNumber = 3;
-        game.runNight();
-    }
-
     public void testTimer(){
         Timer timer = new Timer();
+
+        // Make one task for each animatronic?
         TimerTask task = new TimerTask() {
             int count = 89;
 
