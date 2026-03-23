@@ -69,21 +69,22 @@ public class Pizzeria {
         rooms.add(office);
 
         // Make a new method signature that can take single Room objects and pass those into the list.
-        showStage.setValidPaths(List.of(diningHall, backstage), List.of(diningHall), List.of(diningHall));
-        diningHall.setValidPaths(List.of(backstage, westHall), List.of(restrooms), List.of(restrooms));
+        showStage.setValidPaths(List.of(diningHall, backstage), diningHall, diningHall);
+        diningHall.setValidPaths(List.of(backstage, westHall), restrooms, restrooms);
 
         westHall.setBonniePaths(List.of(westHallCorner, supplyCloset));
         westHallCorner.setBonniePaths(List.of(supplyCloset, leftDoor));
         supplyCloset.setBonniePaths(List.of(westHall, leftDoor));
         backstage.setBonniePaths(List.of(diningHall, westHall));
 
-        eastHall.setValidPaths(null, List.of(diningHall, eastHallCorner), List.of(eastHallCorner));
-        eastHallCorner.setValidPaths(null, List.of(eastHall, rightDoor), List.of(office));
-        kitchen.setValidPaths(null, List.of(eastHall, restrooms), List.of(eastHall));
-        restrooms.setValidPaths(null, List.of(eastHall, kitchen), List.of(kitchen));
+        eastHall.setChicaAndFreddyPaths(List.of(diningHall, eastHallCorner), eastHallCorner);
 
-        leftDoor.setBonniePaths(List.of(diningHall));
-        rightDoor.setChicaPaths(List.of(eastHall));
+        eastHallCorner.setChicaAndFreddyPaths(List.of(eastHall, rightDoor), office);
+        kitchen.setChicaAndFreddyPaths(List.of(eastHall, restrooms), eastHall);
+        restrooms.setChicaAndFreddyPaths(List.of(eastHall, kitchen), kitchen);
+
+        leftDoor.setBonniePaths(diningHall);
+        rightDoor.setChicaPaths(eastHall);
 
         return rooms;
     }

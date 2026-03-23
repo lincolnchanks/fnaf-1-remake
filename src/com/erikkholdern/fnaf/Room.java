@@ -24,6 +24,10 @@ public class Room {
         return camTag;
     }
 
+    public List<Animatronic> getAnimatronicsPresent(){
+        return animatronicsPresent;
+    }
+
     public List<Room> getValidPaths(Animatronic animatronic){
         return switch (animatronic.getName()) {
             case "Freddy" -> validFreddyPaths;
@@ -45,6 +49,17 @@ public class Room {
         validBonniePaths = bonniePaths;
         validChicaPaths = chicaPaths;
         validFreddyPaths = freddyPaths;
+    }
+
+    public void setValidPaths(List<Room> bonniePaths, Room chicaPath, Room freddyPath){
+        validBonniePaths = bonniePaths;
+        validChicaPaths.add(chicaPath);
+        validFreddyPaths.add(freddyPath);
+    }
+
+    public void setChicaAndFreddyPaths(List<Room> chicaPaths, Room freddyPath){
+        validChicaPaths = chicaPaths;
+        validFreddyPaths.add(freddyPath);
     }
 
     public void setBonniePaths(List<Room> bonniePaths){
@@ -77,10 +92,6 @@ public class Room {
 
     public void removeAnimatronic(Animatronic animatronic){
         animatronicsPresent.remove(animatronic);
-    }
-
-    public List<Animatronic> getAnimatronicsPresent(){
-        return animatronicsPresent;
     }
 
     @Override
