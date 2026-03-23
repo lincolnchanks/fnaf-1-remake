@@ -36,6 +36,10 @@ public class Animatronic {
         return position;
     }
 
+    public String getName(){
+        return name;
+    }
+
     public void setPosition(Room position){
         // This will most likely be replaced by a move() method.
         // Unless we need it for Foxy. Then it will move to Foxy's class.
@@ -55,16 +59,17 @@ public class Animatronic {
         int moveValue = random.nextInt(1, 21);
         return moveValue <= AILevel;
     }
-
     public void travel(){
+        // If the animatronic succeeds its movement check:
+
+        // Get the valid paths for the animatronic's position.
+        // Remove the animatronic from its position room.
+        // Choose a random room and send the animatronic there.
+        // Add the animatronic to its destination room.
+
         if (checkMovementOpportunity()){
-            // Save the list of valid paths for this animatronic
             List<Room> validPaths = position.getValidPaths(this);
-
-            // Remove animatronic from current room
             position.removeAnimatronic(this);
-
-            // Choose a random room from the list (double check that the upper bound isn't exclusive).
             position = validPaths.get(random.nextInt(validPaths.size()));
             position.addAnimatronic(this);
 
@@ -74,10 +79,6 @@ public class Animatronic {
             System.out.println(this + " has failed their movement check.");
         }
 //        position.showRoomCamera();
-    }
-
-    public String getName(){
-        return name;
     }
 
     @Override

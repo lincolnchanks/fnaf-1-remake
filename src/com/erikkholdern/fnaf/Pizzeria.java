@@ -68,28 +68,22 @@ public class Pizzeria {
         rooms.add(rightDoor);
         rooms.add(office);
 
-        showStage.setBonniePaths(List.of(diningHall, backstage));
-        diningHall.setBonniePaths(List.of(backstage, westHall));
+        // Make a new method signature that can take single Room objects and pass those into the list.
+        showStage.setValidPaths(List.of(diningHall, backstage), List.of(diningHall), List.of(diningHall));
+        diningHall.setValidPaths(List.of(backstage, westHall), List.of(restrooms), List.of(restrooms));
+
         westHall.setBonniePaths(List.of(westHallCorner, supplyCloset));
         westHallCorner.setBonniePaths(List.of(supplyCloset, leftDoor));
         supplyCloset.setBonniePaths(List.of(westHall, leftDoor));
         backstage.setBonniePaths(List.of(diningHall, westHall));
+
+        eastHall.setValidPaths(null, List.of(diningHall, eastHallCorner), List.of(eastHallCorner));
+        eastHallCorner.setValidPaths(null, List.of(eastHall, rightDoor), List.of(office));
+        kitchen.setValidPaths(null, List.of(eastHall, restrooms), List.of(eastHall));
+        restrooms.setValidPaths(null, List.of(eastHall, kitchen), List.of(kitchen));
+
         leftDoor.setBonniePaths(List.of(diningHall));
-
-        showStage.setChicaPaths(List.of(diningHall));
-        diningHall.setChicaPaths(List.of(restrooms));
-        eastHall.setChicaPaths(List.of(diningHall, eastHallCorner));
-        eastHallCorner.setChicaPaths(List.of(eastHall, rightDoor));
-        kitchen.setChicaPaths(List.of(eastHall, restrooms));
-        restrooms.setChicaPaths(List.of(eastHall, kitchen));
         rightDoor.setChicaPaths(List.of(eastHall));
-
-        showStage.setFreddyPaths(List.of(diningHall));
-        diningHall.setFreddyPaths(List.of(restrooms));
-        restrooms.setFreddyPaths(List.of(kitchen));
-        kitchen.setFreddyPaths(List.of(eastHall));
-        eastHall.setFreddyPaths(List.of(eastHallCorner));
-        eastHallCorner.setFreddyPaths(List.of(office));
 
         return rooms;
     }

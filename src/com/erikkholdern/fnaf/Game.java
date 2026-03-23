@@ -10,8 +10,6 @@ public class Game {
     private int nightNumber;
     private int hourNumber;
 
-    private int timeSeconds = 0;
-
     // 12AM is 90 seconds (90,000 milliseconds)
     // 1AM and onward are 89 seconds (89,000 milliseconds)
 
@@ -25,6 +23,10 @@ public class Game {
     }
 
     public void runNight(){
+        // Sets up the night and calls the timer method. Returns true if
+        // the player survived the night. Returns false if they got
+        // jumpscared?
+
         // Create an Animatronics class that registers each animatronic.
         // Thus, we can call the animatronics using Animatronics.FREDDY or
         // something like that.

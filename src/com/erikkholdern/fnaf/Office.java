@@ -51,14 +51,14 @@ public class Office {
         rightLightOn = false;
     }
 
+    // This does not have a setter because only things in this
+    // class should be affecting the usage level.
     public int getUsageLevel(){
-        // This does not have a setter because only things in this
-        // class should be affecting the usage level.
         return usageLevel;
     }
 
-    public void updateUsage(boolean bool){
-        if (bool)
+    public void updateUsage(boolean usageIncreased){
+        if (usageIncreased)
             usageLevel++;
         else
             usageLevel--;
